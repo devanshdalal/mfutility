@@ -6,7 +6,7 @@ portfolio of stocks of a class of mutual funds to be invested in markets without
 paying the extra expense ratio.
 
 
-# Small Cap Funds in India.
+## Small Cap Funds in India.
 ```
                                    funds  weights
 0                    Axis Small Cap Fund     0.04
@@ -26,7 +26,7 @@ paying the extra expense ratio.
 117           Tube Investments Of India  0.9800
 ```
 
-
+## Thematic(Infra) funds in India
 ```
                                            funds  weights
 0                      Franklin Build India Fund     0.15
