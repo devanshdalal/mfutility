@@ -1,4 +1,4 @@
-#MFUtility
+# MFUtility
 
 This project scraps data for various mutual funds and creates a portfolio,
 depending on the weights provided. Using this, anyone can create a average of a
@@ -6,7 +6,7 @@ portfolio of stocks of a class of mutual funds to be invested in markets without
 paying the extra expense ratio.
 
 
-#Small Cap Funds in India.
+# Small Cap Funds in India.
                                    funds  weights
 0                    Axis Small Cap Fund     0.04
 1                   Kotak Small Cap Fund     0.10
