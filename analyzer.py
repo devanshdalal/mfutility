@@ -33,7 +33,6 @@ def Analyze(csvs, weights = False):
 		print(combined) 
 
 
-weights = [0.04, 0.1, 0.2, 0.1, 0.3, 0.1, 0.06, 0.1]
-Analyze(cfg.csvs, weights)
+Analyze(cfg.csvs, cfg.parser_config.weights)
 
 
