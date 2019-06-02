@@ -7,6 +7,7 @@ paying the extra expense ratio.
 
 
 # Small Cap Funds in India.
+```
                                    funds  weights
 0                    Axis Small Cap Fund     0.04
 1                   Kotak Small Cap Fund     0.10
@@ -23,3 +24,5 @@ paying the extra expense ratio.
 106                    Aurobindo Pharma  1.0380
 144                        Chalet Hotel  0.9882
 117           Tube Investments Of India  0.9800
+```
+
