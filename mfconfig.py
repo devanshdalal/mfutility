@@ -1,10 +1,10 @@
 #!/usr/bin/env python
+import pandas as pd
 
-funds = {'16617': 0.5,
-         '26133': 0.5}
+import parser_config
 
-header = ['Company', 'Sector', 'PE', '3Y High', '3Y Low', '% Assets']
+csvs = {}
+for mf in parser_config.mutual_funds:
+	csvs[mf] = parser_config.GetFileName(parser_config.mutual_funds[mf])
 
-for i in funds:
-	funds[i] = base_url + funds[i]
 

@@ -14,7 +14,7 @@ def Parse(url):
 
         final = np.reshape(np.array(l), (-1, 6))
 
-        fname = 'data/' + url.split('=')[-1] + ".csv"
+        fname = cfg.GetFileName(url.split('=')[-1])
         pd.DataFrame(final).to_csv(fname, header=cfg.header)
         return fname
 
