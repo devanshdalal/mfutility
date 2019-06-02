@@ -5,6 +5,7 @@ depending on the weights provided. Using this, anyone can create a average of a
 portfolio of stocks of a class of mutual funds to be invested in markets without
 paying the extra expense ratio.
 
+# Analysis on a few of the mutual fund categories dated on 1 June, 2019.
 
 ## Small Cap Funds in India.
 ```
