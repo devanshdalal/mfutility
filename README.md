@@ -24,6 +24,29 @@ paying the extra expense ratio.
 106                    Aurobindo Pharma  1.0380
 144                        Chalet Hotel  0.9882
 117           Tube Investments Of India  0.9800
+35                Balkrishna Industries  0.9600
+134                     Sonata Software  0.9300
+105                           JK Cement  0.8764
+77          Chambal Fertilisers & Chem.  0.8340
+2               Gujarat Fluorochemicals  0.8040
+22                        Indian Hotels  0.7962
+64                            HDFC Bank  0.7940
+38                   Galaxy Surfactants  0.7894
+78              Repco Home Finance Ltd.  0.7770
+79                     JMC Projects (I)  0.7590
+125                   Vardhman Textiles  0.7380
+57                     Grindwell Norton  0.7376
+147                         Sheela Foam  0.7330
+16                          Indian Bank  0.7230
+139                   The Ramco Cements  0.7210
+31                            SKF India  0.7050
+121       Techno Electric & Engineering  0.6940
+60   Future Supply Chain Solutions Ltd.  0.6830
+10                    KEC International  0.6300
+59                         NRB Bearings  0.6240
+58                  Sadbhav Engineering  0.6180
+73                            Blue Star  0.6112
+153               Firstsource Solutions  0.6090
 ```
 
 ## Thematic(Infra) funds in India
@@ -62,4 +85,38 @@ paying the extra expense ratio.
 98                         AIA Engineering  1.0260
 ```
 
+## Thematic(Consumption) funds
+```
+                                      funds  weights
+0                    Quant Consumption Fund    0.125
+1        SBI Consumption Opportunities Fund    0.125
+2                 Reliance Consumption Fund    0.125
+3       Sundaram Rural and Consumption Fund    0.125
+4  Aditya Birla Sun Life India GenNext Fund    0.125
+5                  Tata India Consumer Fund    0.125
+6           Mirae Asset Great Consumer Fund    0.125
+7        Canara Robeco Consumer Trends Fund    0.125
+                                   Company   Weight
+76                                     ITC  6.67000
+26                      Hindustan Unilever  3.76375
+4                             Asian Paints  2.78500
+38                               HDFC Bank  2.74000
+94                            Nestle India  2.41625
+102                             ICICI Bank  2.40750
+72                       Colgate-Palmolive  2.19000
+96                             Dabur India  1.99500
+78                     Maruti Suzuki India  1.96625
+64                           Titan Company  1.90750
+16                     Mahindra & Mahindra  1.57875
+2                           United Spirits  1.57750
+40                              Bata India  1.51250
+28                      Jubilant FoodWorks  1.49750
+66                                  Marico  1.43125
+50                                  Voltas  1.38625
+33                     State Bank of India  1.32625
+45                        United Breweries  1.24625
+11                           Indian Hotels  1.14250
+70                       Stylam Industries  1.14000
+52                           Havells India  1.01625
+```
 
