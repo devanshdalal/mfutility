@@ -47,3 +47,10 @@ for i in mutual_funds:
 def GetFileName(id):
 	return 'data/' + id + '.csv'
 
+
+
+
+# Moneycontrol MF config
+
+MCFunds = 'https://www.moneycontrol.com/mutual-funds/performance-tracker/returns/small-cap-fund.html'
+
