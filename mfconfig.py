@@ -1,10 +1,19 @@
 #!/usr/bin/env python
 import pandas as pd
 
-import parser_config
+VRO = {
+	'data/HDFC Small Cap Fund.csv': 0.6,
+	'data/Kotak Small Cap Fund.csv' : 0.4
+}
 
-csvs = {}
-for mf in parser_config.mutual_funds:
-	csvs[mf] = parser_config.GetFileName(parser_config.mutual_funds[mf])
+MC = {
+	'data/hdfc-small-cap-fund-direct-plan-growth.csv': 0.6,
+	'data/kotak-small-cap-fund-direct-plan-growth.csv' : 0.4
+}
+
+
+# Moneycontrol MF config
+
+
 
 
