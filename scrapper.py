@@ -6,14 +6,15 @@ import xml.etree.ElementTree as ET
 import scrapper_config as cfg
 import utils
 import os
+import sys
 
 ###########################################################################
-### Parser utils
+### Scrapper utils
 ###########################################################################
 
 def GetFileName(id, dir = 'data'):
-    os.system('mkdir -p dir');
-    return dir + '/' + id + '.csv'
+    os.system('mkdir -p '+ dir);
+    return dir + '/' + id.replace(' ', '_') + '.csv'
 
 ###########################################################################
 ### ValueResearch
@@ -23,14 +24,13 @@ def ParseValueResearchOnline(name, code):
     url = cfg.base_url + code
     page = requests.get(url)
     tree = html.fromstring(page.content)
-    l = tree.xpath('//table[@class="dataTableId"]//td')
+    l = tree.xpath('//table[@id="fund-snapshot-port-holdings"]//td//text()')
+    # print 'l:', l
     l = utils.RemoveSpaces(l)
+    fname = GetFileName(name)
     final = np.reshape(np.array(l), (-1, 6))
-    pd.DataFrame(final).to_csv(GetFileName(name), header=cfg.header)
-    return name
-
-# for fund in cfg.mutual_funds_codes:
-#   print "Done parsing:", fund, "Wrote:", ParseValueResearchOnline(fund, cfg.mutual_funds_codes[fund])
+    pd.DataFrame(final).to_csv(fname, header=cfg.header)
+    return fname
 
 ###########################################################################
 ### Moneycontrol
@@ -60,6 +60,7 @@ def ParseMoneyControl(url):
     rows = map(lambda x: x.xpath('./td'), rows[1:])
     for i,x in enumerate(rows):
         rows[i] = map(lambda y: ' '.join(utils.RemoveSpaces(y.xpath('.//text()'))), x)
+        rows[i] = map(lambda y: y.replace('%', ''), rows[i])  # strip % signs
     rows = utils.RemoveSpaces(rows)
     # final = np.array(rows)
     final = np.array([np.array(xi) for xi in rows])
@@ -70,9 +71,22 @@ def ParseMoneyControl(url):
     pd.DataFrame(final).to_csv(fname, encoding = 'utf-8', header=header)
     return fname
 
-for f in cfg.MCFunds:
-    print "Geting funds from " + f
-    links = ExtractLinks(f)
-    for x in links:
-        print x[0], x[1], x[2]
-        # print ParseMoneyControl(x[0])
+####################################################################################
+
+args = utils.ParseCmd(sys.argv)
+if args.clean:
+    os.system('rm -rf data/*')
+if args.source is not None:
+    if utils.MC in args.source:
+        for f in cfg.MCFunds:
+            print "Geting funds from " + f
+            links = ExtractLinks(f)
+            for x in links:
+                print x[0], x[1], x[2]
+                print ParseMoneyControl(x[0])
+    if utils.VRO in args.source:
+        for fund in cfg.mutual_funds_codes:
+            print "ParseValueResearchOnline, fund:", fund, "code:", cfg.mutual_funds_codes[fund] 
+            print "Writing:", ParseValueResearchOnline(fund, cfg.mutual_funds_codes[fund])
+            # break
+

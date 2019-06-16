@@ -2,8 +2,8 @@
 import pandas as pd
 
 VRO = {
-	'data/HDFC Small Cap Fund.csv': 0.6,
-	'data/Kotak Small Cap Fund.csv' : 0.4
+	'data/HDFC_Small_Cap_Fund.csv': 0.6,
+	'data/Kotak_Small_Cap_Fund.csv': 0.4
 }
 
 MC = {
