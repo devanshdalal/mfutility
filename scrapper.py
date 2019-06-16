@@ -7,10 +7,14 @@ import scrapper_config as cfg
 import utils
 import os
 import sys
+import requests_cache
+
 
 ###########################################################################
 ### Scrapper utils
 ###########################################################################
+
+requests_cache.install_cache('requests_cache', expire_after=600)
 
 def GetFileName(id, dir = 'data'):
     os.system('mkdir -p '+ dir);
