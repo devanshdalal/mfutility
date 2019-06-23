@@ -10,6 +10,8 @@ def ParseCmd(argv):
     parser.add_argument(
         '--source', nargs='+', choices=[MC, VRO],
         help='The source of scraping')
+    parser.add_argument('--config', help='The config as a str')
+    parser.add_argument('--to_json', help='out spec', action='store_true')
     parser.add_argument('--clean', help='clean', action='store_true')
     args = parser.parse_args(argv[1:])
     return args
