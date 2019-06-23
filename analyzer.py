@@ -20,7 +20,9 @@ def WeightedAverage(csvs,
     funds = []
     weights = []
     for file in csvs:
-        funds.append(pd.read_csv(file))
+        if not file.startswith('data'):
+            file_path = 'data/' + file
+        funds.append(pd.read_csv(file_path))
         weights.append(csvs[file])
     # print "weights", weights
     # print "funds: ", funds
@@ -38,7 +40,7 @@ def WeightedAverage(csvs,
     combined = pd.DataFrame(combined.items(), columns = [columns[0], columns[1]])
     combined = combined.sort_values(by=[columns[1]], ascending=False)
     if to_json:
-        print combined.to_json()
+        print combined.to_json(orient = 'records')
     else: 
         with pd.option_context('display.max_rows', None, 'display.max_columns', None):  # more options can be specified also
             print(combined)
@@ -52,7 +54,7 @@ if args.source is not None:
     # Moneycontrol specific analysis.
     #############################################################################
     if utils.MC in args.source:
-        WeightedAverage(cfg.MC)        
+        WeightedAverage(cfg.MC)      
     #############################################################################
     # Value research online specific analysis.
     #############################################################################
