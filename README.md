@@ -121,3 +121,7 @@ paying the extra expense ratio.
 52                           Havells India  1.01625
 ```
 
+## Eaxample command:
+```
+python analyzer.py --config '{"data/hdfc-small-cap-fund-direct-plan-growth.csv": 0.6, "data/kotak-small-cap-fund-direct-plan-growth.csv": 0.4}' --to_json
+```
