@@ -17,13 +17,15 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(cors());
 
-var readStream = function(stream, res) {
+var readStream = function(stream,
+                          transformer,
+                          res) {
   var output = '';
   stream.on('data', function(data) {
     output += data.toString()
   })
   stream.on('end', function() {
-    res.send(output);
+    res.send(transformer(output));
   })
 }
 
@@ -37,14 +39,22 @@ app.post('/getportfolio', async function(req, res) {
                        "--config", 
                        JSON.stringify(req.body.params),
                        "--to_json"]);
-  readStream(process.stdout, res)
+  readStream(process.stdout, function(r) {return r}, res)
 });
 
 app.get('/getfunds', async function(req, res) {
   console.log('/getfunds api requested')
   var process = await spawn('ls',["data"]);
-  readStream(process.stdout, res)
-  console.log(res)
+  readStream(process.stdout,
+             function(buffer) {
+               lines = buffer.match(/[^\r\n]+/g);
+               lines = lines.map(function(x) {
+                    return x.substring(0, x.lastIndexOf('.'))
+                  }
+               );
+               return lines;
+             },
+             res);
 });
 
 // var db_url = config.url;

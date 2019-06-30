@@ -22,6 +22,8 @@ def WeightedAverage(csvs,
     for file in csvs:
         if not file.startswith('data'):
             file_path = 'data/' + file
+        if file.startswith('.csv'):
+            file_path = file_path + '.csv'
         funds.append(pd.read_csv(file_path))
         weights.append(csvs[file])
     # print "weights", weights
